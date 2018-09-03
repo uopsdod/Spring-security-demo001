@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" type="text/css"
 	href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
-<script src="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+<script src="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <!-- 
 	<spring:url value="/css/main.css" var="springCss" />
@@ -38,26 +38,16 @@
 			<h1>Spring Boot Web JSP Example</h1>
 			<h2>Message: ${message}</h2>
 		</div>
-
-		<form>
-			<div class="form-group">
-				<label for="exampleInputEmail1">Email address</label> <input
-					type="email" class="form-control" id="exampleInputEmail1"
-					aria-describedby="emailHelp" placeholder="Enter email"> <small
-					id="emailHelp" class="form-text text-muted">We'll never
-					share your email with anyone else.</small>
-			</div>
-			<div class="form-group">
-				<label for="exampleInputPassword1">Password</label> <input
-					type="password" class="form-control" id="exampleInputPassword1"
-					placeholder="Password">
-			</div>
-			<div class="form-check">
-				<input type="checkbox" class="form-check-input" id="exampleCheck1">
-				<label class="form-check-label" for="exampleCheck1">Check me
-					out</label>
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+		
+		<!-- OAuth Client will redirect Resource owner's request to Authorization server -->
+		<!-- Authorization server than asks Resource owner whether to allow this OAuth client to access your protected resources -->
+		<form action="/oauth/authorize" method="get" target="_blank" role="form" class="form-horizontal">
+			ClientId: <input type="text" name="client_id" value="oauth_client"><br> 
+			Scope: <input type="text" name="scope" value="read"><br>
+			Response type: <input type="text" name="response_type" value="code"><br>
+			State: <input type="text" name="state" value="rensanning"><br>
+			<button type="submit">Submit</button>
+<!-- 			<button type="submit" formmethod="post">Submit using POST</button> -->
 		</form>
 
 	</div>
