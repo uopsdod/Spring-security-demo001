@@ -1,6 +1,8 @@
 package com.auth;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -63,7 +65,17 @@ public class Config {
         }  
     }  
       
-      
+    /**
+     * Config Spring security policy.
+     *
+     * About @Order
+     * With SpringBoot must set @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+     * on WebSecurityConfiguration or Spring Security will
+     * put UsernamePasswordAuthenticationFilter before OAuth2AuthenticationProcessingFilter.
+     * It means OAuth2 authentication of resource server will not work.
+     *
+     */
+    @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
     @Configuration  
     @EnableWebSecurity  
     static class SecurityConfig extends WebSecurityConfigurerAdapter {  
@@ -80,7 +92,6 @@ public class Config {
             http.csrf().disable();  
             http.authorizeRequests()  
                 .antMatchers("/oauth/authorize").authenticated()  
-                .anyRequest().denyAll()
                 .and()  
                 .httpBasic().realmName("OAuth Server");  
         }  
