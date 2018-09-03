@@ -80,6 +80,7 @@ public class Config {
             http.csrf().disable();  
             http.authorizeRequests()  
                 .antMatchers("/oauth/authorize").authenticated()  
+                .anyRequest().denyAll()
                 .and()  
                 .httpBasic().realmName("OAuth Server");  
         }  
