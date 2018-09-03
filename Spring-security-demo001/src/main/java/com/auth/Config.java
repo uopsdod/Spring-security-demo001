@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 public class Config {  
@@ -35,7 +36,16 @@ public class Config {
                     .redirectUris("http://default-oauth-callback.com")  
                     .accessTokenValiditySeconds(60*30) // 30min  
                     .refreshTokenValiditySeconds(60*60*24); // 24h  
-        }  
+        }
+
+		@Override
+		public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+			security.allowFormAuthenticationForClients();
+		}  
+        
+        
+        
+        
     }  
       
     @Configuration  

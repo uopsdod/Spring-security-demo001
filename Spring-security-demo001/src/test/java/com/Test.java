@@ -8,6 +8,7 @@ public class Test {
   
     public static void main(String[] args) {  
         System.out.println(generate("oauth_client", "oauth_client_secret"));  
+        System.out.println(generate("user", "123")); 
     }  
   
     private static String generate(String clientId, String clientSecret) {  
