@@ -1,6 +1,5 @@
 
-OAuth2 abstract flow: 
-
+## OAuth2 abstract flow: 
 
 1. Third-party website client notifies Authorization server that it wants to access a user's resource (ex. a certain api path /api/users GET)
 
@@ -17,10 +16,24 @@ OAuth2 abstract flow:
 7. With that access token in hand, the third-party website client can invoke those APIS to get what it wants, such as the user's information.
 
 
-References: 
+## References: 
 Three-legged OAuth flow:
 https://www.ibm.com/support/knowledgecenter/en/SS9H2Y_7.7.0/com.ibm.dp.doc/oauth_threeleggedflow.html
 
 pring Security OAuth2 Provider - minimum inplementation: 
 http://rensanning.iteye.com/blog/2384996
+
+## test data - get authorization grant code:
+http://localhost:9009/oauth/authorize?client_id=oauth_client&scope=read&response_type=code&state=rensanning&redirect_uri=http://default-oauth-callback.com 
+
+http://localhost:9009/oauth/authorize?client_id=oauth_client&scope=read&response_type=code&state=rensanning
+
+http://localhost:9009/oauth/authorize?client_id=oauth_client&scope=write&response_type=code&state=rensanning&redirect_uri=http://default-oauth-callback.com 
+
+http://localhost:9009/oauth/authorize?client_id=oauth_client&scope=write&response_type=code&state=rensanning
+
+
+
+
+
 
