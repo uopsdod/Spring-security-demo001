@@ -36,11 +36,16 @@
 
 		<div class="starter-template">
 			<h1>Spring Boot Web JSP Example</h1>
-			<h2>Message: ${message}</h2>
+			<h3>Notify the Authorization server: this OAuth client(third-party website) wants to access my resource (usually the third-party website will do this) </h3>
+			<h3>Resource owner logins in the Authorization server</h3>
+			<h3>Authorization server will then ask Resource owner: Do you really want to allow/deny its access? (then, you'll be asked for permission) </h3>
+			
+<%-- 			<h2>Message: ${message}</h2> --%>
 		</div>
 		
 		<!-- OAuth Client will redirect Resource owner's request to Authorization server -->
 		<!-- Authorization server than asks Resource owner whether to allow this OAuth client to access your protected resources -->
+		
 		<form action="/oauth/authorize" method="get" target="_blank" role="form" class="form-horizontal">
 			ClientId: <input type="text" name="client_id" value="oauth_client"><br> 
 			Scope: <input type="text" name="scope" value="read"><br>
