@@ -26,5 +26,11 @@ public class BasicController {
 		model.put("message", "hello");
 		return "welcome";
 	}
+	
+	@RequestMapping("/authorize")
+	public String authorize(Map<String, String> model) {
+		model.put("message", "hello");
+		return "authorize";
+	}
 
 }
