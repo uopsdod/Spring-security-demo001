@@ -17,5 +17,10 @@ OAuth2 abstract flow:
 7. With that access token in hand, the third-party website client can invoke those APIS to get what it wants, such as the user's information.
 
 
+References: 
+Three-legged OAuth flow:
+https://www.ibm.com/support/knowledgecenter/en/SS9H2Y_7.7.0/com.ibm.dp.doc/oauth_threeleggedflow.html
 
+pring Security OAuth2 Provider - minimum inplementation: 
+http://rensanning.iteye.com/blog/2384996
 
