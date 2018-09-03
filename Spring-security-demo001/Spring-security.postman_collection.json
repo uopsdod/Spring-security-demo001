@@ -1,0 +1,240 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Spring-security",
+		"_postman_id": "87a9f0d3-8cf3-c299-5d9e-020beb9e0de5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/oauth/token - authorization_code",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9009/oauth/token?grant_type=authorization_code&redirect_uri=http://default-oauth-callback.com&code=jDYXRE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://default-oauth-callback.com",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "code",
+							"value": "jDYXRE",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic b2F1dGhfY2xpZW50Om9hdXRoX2NsaWVudF9zZWNyZXQ=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/oauth/token - authorization_code - no hash",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9009/oauth/token?grant_type=authorization_code&redirect_uri=http://default-oauth-callback.com&client_id=oauth_client&client_secret=oauth_client_secret&code=7xuVDL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://default-oauth-callback.com",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_id",
+							"value": "oauth_client",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_secret",
+							"value": "oauth_client_secret",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "code",
+							"value": "7xuVDL",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/oauth/token - refresh_token - query param",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9009/oauth/token?grant_type=refresh_token&refresh_token=072f51e1-99ea-4055-a80b-97b00235dd36",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "refresh_token",
+							"value": "072f51e1-99ea-4055-a80b-97b00235dd36",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic b2F1dGhfY2xpZW50Om9hdXRoX2NsaWVudF9zZWNyZXQ=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9009/api/get - header",
+			"request": {
+				"url": "http://localhost:9009/api/get",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 073dfb63-b447-4d6e-9f3a-e7fb232ba350",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9009/api/get - guery param",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9009/api/get?access_token=578886e5-2a0d-4b4b-8745-725e247f8a93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"api",
+						"get"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "578886e5-2a0d-4b4b-8745-725e247f8a93",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9009/api/post",
+			"request": {
+				"url": "http://localhost:9009/api/post",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 073dfb63-b447-4d6e-9f3a-e7fb232ba350",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9009/api/user",
+			"request": {
+				"url": "http://localhost:9009/api/user",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1462dac1-0da9-46a6-a2cd-e29f49ba67d9",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
