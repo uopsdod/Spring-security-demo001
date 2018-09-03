@@ -127,3 +127,8 @@
 [18/09/03 10:50:17.175][ INFO][com.util.Util                      -55   ] - Util() end
 [18/09/03 10:50:17.813][ INFO][com.bean.ApplicationListenerBean   -17   ] - ContextRefreshedEvent start ###################
 [18/09/03 10:50:17.814][ INFO][com.bean.ApplicationListenerBean   -20   ] - ContextRefreshedEvent end ###################
+[18/09/03 10:56:09.388][ INFO][com.util.Util                      -51   ] - Util() start
+[18/09/03 10:56:09.403][ INFO][com.util.Util                      -54   ] - Util - YourProjectName version: v1.0.0
+[18/09/03 10:56:09.403][ INFO][com.util.Util                      -55   ] - Util() end
+[18/09/03 10:56:10.095][ INFO][com.bean.ApplicationListenerBean   -17   ] - ContextRefreshedEvent start ###################
+[18/09/03 10:56:10.095][ INFO][com.bean.ApplicationListenerBean   -20   ] - ContextRefreshedEvent end ###################
